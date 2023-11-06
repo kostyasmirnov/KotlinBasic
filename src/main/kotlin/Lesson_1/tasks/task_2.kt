@@ -10,6 +10,7 @@ fun main() {
     var employees: Int = 2000
     //println("Количество работников интернет магазина: " + employees)
 
-    employees = employees - 1 //1 работник уволился
+    employees = employees - 1
     println("Количество работников интернет магазина: " + employees)
+
 }
