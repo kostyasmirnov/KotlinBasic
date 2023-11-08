@@ -15,5 +15,4 @@ fun main() {
     println("Расходы на выпланту зарплаты постоянных сотрудников: " + expensesForOldEmployees + " рублей")
     println("Общие расходы по ЗП после прихода стажеров: " + generalExpensesAfterArrivalInters + " рублей")
     println("Средняя ЗП одного сотрудника после устройства стажеров: " + averageSalaryForOneEmployee + " рублей")
-
 }
