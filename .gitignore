@@ -1,6 +1,5 @@
 /.gradle/
-/.build/
 /.idea/
-
+/.build/
 /build/
 /build.gradle.kts/
