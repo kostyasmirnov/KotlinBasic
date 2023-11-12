@@ -4,14 +4,6 @@ import com.sun.org.apache.xpath.internal.operations.Bool
 
 fun main() {
 
-    val shipWithoutDamage: Boolean
-    val crew: Int
-    val numberOfBoxesOfProvisions: Int
-    val favorableWeather: Boolean
-
-    val rangeCrew = 55..70
-    val minBoxes = 50
-
     shipWithoutDamage = readlnOrNull()?.toBoolean() ?: false
     crew = readlnOrNull()?.toInt() ?: 0
     numberOfBoxesOfProvisions = readlnOrNull()?.toInt() ?: 0
@@ -44,3 +36,11 @@ fun main() {
         println("Корабль не может отправиться в плавание")
     }
 }
+
+var shipWithoutDamage: Boolean = false
+var crew: Int = 0
+var numberOfBoxesOfProvisions: Int = 0
+var favorableWeather: Boolean = false
+
+val rangeCrew = 55..70
+const val minBoxes = 50
