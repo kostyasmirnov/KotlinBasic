@@ -3,44 +3,39 @@ package Lesson_4.tasks
 import com.sun.org.apache.xpath.internal.operations.Bool
 
 fun main() {
+    var isShipWithDamage: Boolean = readlnOrNull()?.toBoolean() ?: false
+    var crew: Int = readlnOrNull()?.toInt() ?: 0
+    var isNumberOfBoxesOfProvisions: Int = readlnOrNull()?.toInt() ?: 0
+    var isFavorableWeather: Boolean = readlnOrNull()?.toBoolean() ?: false
 
-    shipWithoutDamage = readlnOrNull()?.toBoolean() ?: false
-    crew = readlnOrNull()?.toInt() ?: 0
-    numberOfBoxesOfProvisions = readlnOrNull()?.toInt() ?: 0
-    favorableWeather = readlnOrNull()?.toBoolean() ?: false
-
-    fun checkConditions(
-        shipWithoutDamage: Boolean,
-        crew: Int,
-        numberOfBoxesOfProvisions: Int,
-        favorableWeather: Boolean): Boolean {
-        return ((shipWithoutDamage and favorableWeather == true)
-                and (crew in rangeCrew )
-                and (numberOfBoxesOfProvisions >= minBoxes))
-
-        }
-
-    fun checkConditions2(
-        shipWithoutDamage: Boolean,
-        crew: Int,
-        numberOfBoxesOfProvisions: Int,
-        favorableWeather: Boolean): Boolean {
-        return ((shipWithoutDamage == false and favorableWeather == true)
-                and (crew >= 70)
-                and (numberOfBoxesOfProvisions >= minBoxes))
-    }
-
-    if (checkConditions(shipWithoutDamage, crew, numberOfBoxesOfProvisions, favorableWeather) || checkConditions2(shipWithoutDamage, crew, numberOfBoxesOfProvisions, favorableWeather)) {
+    if (checkConditions(isShipWithDamage, crew, isNumberOfBoxesOfProvisions, isFavorableWeather) || checkConditions2(isShipWithDamage, crew, isNumberOfBoxesOfProvisions, isFavorableWeather)) {
         println("Корабль может отправиться в плавание")
     } else {
         println("Корабль не может отправиться в плавание")
     }
 }
 
-var shipWithoutDamage: Boolean = false
-var crew: Int = 0
-var numberOfBoxesOfProvisions: Int = 0
-var favorableWeather: Boolean = false
+const val MIN_RANGE_CREW = 55
+const val MAX_RANGE_CREW = 70
+const val MIN_BOXES = 50
 
-val rangeCrew = 55..70
-const val minBoxes = 50
+fun checkConditions(
+    isShipWithDamage: Boolean,
+    crew: Int,
+    isNumberOfBoxesOfProvisions: Int,
+    isFavorableWeather: Boolean): Boolean {
+    return ((isShipWithDamage == true)
+            and (crew in MIN_RANGE_CREW..MAX_RANGE_CREW )
+            and (isNumberOfBoxesOfProvisions >= MIN_BOXES))
+
+}
+
+fun checkConditions2(
+    isShipWithDamage: Boolean,
+    crew: Int,
+    isNumberOfBoxesOfProvisions: Int,
+    isFavorableWeather: Boolean): Boolean {
+    return ((isFavorableWeather == true)
+            and (crew >= MAX_RANGE_CREW)
+            and (isNumberOfBoxesOfProvisions >= MIN_BOXES))
+}
