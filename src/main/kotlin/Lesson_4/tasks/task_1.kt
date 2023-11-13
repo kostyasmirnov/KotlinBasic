@@ -22,4 +22,4 @@ fun main() {
 
 }
 
-const val maxTables = 13
+const val MAX_TABLES = 13
