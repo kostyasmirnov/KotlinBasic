@@ -8,13 +8,13 @@ fun main() {
     val legDay: String = "Упражнения для ног:"
     val backDay: String = "Упражнения для спины:"
     val pressDay: String = "Упражнения для пресса:"
-    val group: Boolean = currentDay % 2 == 1
+    val isEvenDay: Boolean = true
 
     var resultInfo = """
-        $armDay   ${group}
-        $legDay   ${!group}
-        $backDay  ${!group}
-        $pressDay ${group}
+        $armDay   ${isEvenDay}
+        $legDay   ${!isEvenDay}
+        $backDay  ${!isEvenDay}
+        $pressDay ${isEvenDay}
     """
     println(resultInfo)
 }
