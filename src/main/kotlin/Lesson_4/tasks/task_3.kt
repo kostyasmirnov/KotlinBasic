@@ -3,13 +3,18 @@ package Lesson_4.tasks
 
 fun main() {
 
-    var analysisOfConditions = (isSunnyWeather == true and isOpenTent == true and isWinterNow == false)  and (airHumidity == 20)
+    val isSunnyWeather: Boolean = true
+    val isOpenTent: Boolean = true
+    val airHumidity: Int = 20
+    val isWinterNow: Boolean = true
+
+    var analysisOfConditions = (IS_SUNNY_WEATHER == isSunnyWeather and IS_OPEN_TENT == isOpenTent and IS_WINTER_NOW == isWinterNow)  and (AIR_HUMIDITY == airHumidity)
 
     println("Благоприятные ли условия сейчас для роста бобовых? $analysisOfConditions")
 
 }
 
-const val isSunnyWeather: Boolean = true
-const val isOpenTent: Boolean = true
-const val airHumidity: Int = 20
-const val isWinterNow: Boolean = true
+const val IS_SUNNY_WEATHER: Boolean = true
+const val IS_OPEN_TENT: Boolean = true
+const val AIR_HUMIDITY: Int = 20
+const val IS_WINTER_NOW: Boolean = false
