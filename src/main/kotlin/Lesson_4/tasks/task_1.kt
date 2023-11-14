@@ -12,10 +12,10 @@ fun main() {
     val reservationToday = 13
     val reservationTomorrow = reservationToday - 4
 
-    val isAvailableToday = reservationToday < maxTables
+    val isAvailableToday = reservationToday < MAX_TABLES
     println("Доступность столиков на сегодня: $isAvailableToday")
 
-    val isAvailableTomorrow = reservationTomorrow < maxTables
+    val isAvailableTomorrow = reservationTomorrow < MAX_TABLES
     println("Доступность столиков на завтра: $isAvailableTomorrow")
 
 
