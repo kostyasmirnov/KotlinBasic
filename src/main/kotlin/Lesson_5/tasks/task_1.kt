@@ -6,7 +6,7 @@ fun main() {
             "Сколько будет 12+12?")
 
     val userAnswer = readln()!!.toInt()
-    val expression = 12 + 12
+    val expression = 12
     val answer = expression + expression
 
     if (userAnswer == answer) {
