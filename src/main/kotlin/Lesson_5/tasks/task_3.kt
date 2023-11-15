@@ -9,9 +9,9 @@ fun main() {
 
     println("Угадайте 2 числа для выиграша в лотереи!\n" +
             "Введите первое число:")
-    val number1 = readLine()!!.toInt()
+    val number1 = readln()!!.toInt()
     println("Введите второе число:")
-    val number2 = readLine()!!.toInt()
+    val number2 = readln()!!.toInt()
 
     val trueBothConditions: Boolean = ((number1 == numberForWin1) && (number2 == numberForWin2) || (number2 == numberForWin1) && (number1 == numberForWin2))
     val trueOneConditions = ((number1 == numberForWin2) || (number2 == numberForWin1) || (number1 == numberForWin2) || (number2 == numberForWin1))
