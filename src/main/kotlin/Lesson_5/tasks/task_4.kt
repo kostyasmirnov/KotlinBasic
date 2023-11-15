@@ -11,7 +11,7 @@ fun main() {
 
     if (userName != USER_NAME) {
         println("Такого пользователя не существует. Пожалуйста зарегестрируйтесь")
-        exitProcess(0)
+        return
     }
 
     println("\nВведите пароль:")
