@@ -5,9 +5,10 @@ fun main() {
     println("Для входа в приложение необходимо доказать что вы человек \n" +
             "Сколько будет 12+12?")
 
-    val userAnswer = readln()!!.toInt()
-    val expression = 12
-    val answer = expression + expression
+    val userAnswer = readln().toInt()
+    val number1 = 12
+    val number2 = 12
+    val answer = number1 + number2
 
     if (userAnswer == answer) {
         println("Добро пожаловать!")
