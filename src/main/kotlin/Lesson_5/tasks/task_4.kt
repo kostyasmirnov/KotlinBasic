@@ -17,7 +17,6 @@ fun main() {
     println("\nВведите пароль:")
     val password = readln()
 
-
     if (userName == USER_NAME && password == PASSWORD)
         println(AUTH_MESSAGE.trimIndent())
      else println("get out of here")
