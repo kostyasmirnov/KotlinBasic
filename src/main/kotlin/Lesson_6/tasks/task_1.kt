@@ -13,11 +13,11 @@ fun main() {
         println(INPUT_PASSWORD)
         val enteredPassword = readln()
 
-        val isCorrectAuth = enteredLogin != login || enteredPassword != password
-        if (isCorrectAuth) println("Такого пользователя не существует. Попробуйте еще раз+\n")
+        val isLoginError  = enteredLogin != login || enteredPassword != password
+        if (isLoginError) println("Такого пользователя не существует. Попробуйте еще раз+\n")
         else println("Авторизавция прошла успешно")
 
-    } while (isCorrectAuth)
+    } while (isLoginError)
 
 }
 
