@@ -4,8 +4,6 @@ fun main() {
 
     val randomNumber = (1..9).random()
 
-
-
     do {
         val inputNumberFromUser = readln().toInt()
         if (randomNumber == inputNumberFromUser) println(WINNER_MESSAGE)
