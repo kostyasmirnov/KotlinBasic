@@ -3,13 +3,9 @@ package Lesson_6.tasks
 fun main() {
 
     println(WELCOME_MESSAGE_SECONDS)
-    val secondsFromUser = readln().toInt()
-    var counter: Int = 0
+    val secondsFromUser = readln().toLong()
 
-    do {
-        Thread.sleep(1000)
-        counter++
-    } while (counter < secondsFromUser)
+    Thread.sleep(secondsFromUser * 1000)
     println("Прошло $secondsFromUser секунд")
 
 }
