@@ -2,7 +2,6 @@ package Lesson_5.tasks
 
 
 
-
 fun main() {
 
     val secretNumber1 = (0..42).random()
@@ -11,11 +10,11 @@ fun main() {
 
     println(WELCOME_MESSAGE)
     println(ENTER_FIRST_NUMBER)
-    val userNumber1 = readLine()!!.toInt()
+    val userNumber1 = readln().toInt()
     println(ENTER_SECOND_NUMBER)
-    val userNumber2 = readLine()!!.toInt()
+    val userNumber2 = readln().toInt()
     println(ENTER_THIRD_NUMBER)
-    val userNumber3 = readLine()!!.toInt()
+    val userNumber3 = readln().toInt()
 
     val isAllConditionsTrue: Boolean = ((secretNumber1 == userNumber1 || secretNumber1 == userNumber2 || secretNumber1 == userNumber3)
             && (secretNumber2 == userNumber2|| secretNumber2 == userNumber1 || secretNumber2 == userNumber3)
