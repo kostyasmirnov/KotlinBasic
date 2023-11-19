@@ -1,12 +1,10 @@
 package Lesson_5.tasks
 
-
+import kotlin.random.Random
 
 fun main() {
 
-    val secretNumber1 = (0..42).random()
-    val secretNumber2 = (0..42).random()
-    val secretNumber3 = (0..42).random()
+    val winningNumbers = List(3) { Random.nextInt(0, 43) }
 
     println(WELCOME_MESSAGE)
     println(ENTER_FIRST_NUMBER)
@@ -15,23 +13,16 @@ fun main() {
     val userNumber2 = readln().toInt()
     println(ENTER_THIRD_NUMBER)
     val userNumber3 = readln().toInt()
+    val userNumbers = mutableListOf<Int>(userNumber1, userNumber2, userNumber3)
 
-    val isAllConditionsTrue: Boolean = ((secretNumber1 == userNumber1 || secretNumber1 == userNumber2 || secretNumber1 == userNumber3)
-            && (secretNumber2 == userNumber2|| secretNumber2 == userNumber1 || secretNumber2 == userNumber3)
-            && (secretNumber3 == userNumber3|| secretNumber3 == userNumber2 || secretNumber3 == userNumber1))
-    val isTwoConditionsTrue: Boolean = ((secretNumber1 == userNumber1 || secretNumber1 == userNumber2 || secretNumber1 == userNumber3)
-            || (secretNumber2 == userNumber2|| secretNumber2 == userNumber1 || secretNumber2 == userNumber3)
-            && (secretNumber3 == userNumber3|| secretNumber3 == userNumber2 || secretNumber3 == userNumber1))
-    val isOneConditionsTrue: Boolean = ((secretNumber1 == userNumber1 || secretNumber1 == userNumber2 || secretNumber1 == userNumber3)
-            || (secretNumber2 == userNumber2|| secretNumber2 == userNumber1 || secretNumber2 == userNumber3)
-            || (secretNumber3 == userNumber3|| secretNumber3 == userNumber2 || secretNumber3 == userNumber1))
-
-    if (isAllConditionsTrue) println(THREE_CONDITIONS_TRUE)
-    else if (isTwoConditionsTrue) println(TWO_CONDITIONS_TRUE)
-    else if (isOneConditionsTrue) println(ONE_CONDITIONS_TRUE)
-    else println(NO_ONE_CONDITIONS_TRUE)
-
-    println(END_GAME_MESSAGE + secretNumber1 + ", " + secretNumber2 + ", " + secretNumber3)
+    val matches = winningNumbers.intersect(userNumbers).size
+    when (matches) {
+        3 -> println(THREE_CONDITIONS_TRUE)
+        2 -> println(TWO_CONDITIONS_TRUE)
+        1 -> println(ONE_CONDITIONS_TRUE)
+        else -> println(NO_ONE_CONDITIONS_TRUE)
+    }
+    println("$END_GAME_MESSAGE $winningNumbers")
 }
 
 const val WELCOME_MESSAGE = "Угадайте три числа от 0 до 42"
