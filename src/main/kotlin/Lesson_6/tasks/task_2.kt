@@ -2,7 +2,7 @@ package Lesson_6.tasks
 
 fun main() {
 
-    println(WELCOME_MESSAGE_SECONDS)
+    println(WELCOME_MESSAGE_SECONDS_FOR_TASK2)
     val secondsFromUser = readln().toLong()
 
     Thread.sleep(secondsFromUser * 1000)
@@ -10,4 +10,4 @@ fun main() {
 
 }
 
-const val WELCOME_MESSAGE_SECONDS: String = "Сколько секунд необходимо засечь?"
+const val WELCOME_MESSAGE_SECONDS_FOR_TASK2: String = "Сколько секунд необходимо засечь?"
