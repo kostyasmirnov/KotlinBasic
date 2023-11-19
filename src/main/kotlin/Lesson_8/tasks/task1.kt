@@ -2,7 +2,7 @@ package Lesson_8.tasks
 
 fun main() {
 
-    var viewsOnWeek: IntArray = intArrayOf(MONDAY_VIEWS, TUESDAY_VIEWS, WEDNESDAY_VIEWS, THURSDAY_VIEWS, FRIDAY_VIEWS, SATURDAY_VIEWS, SUNDAY_VIEWS)
+    val viewsOnWeek: IntArray = intArrayOf(MONDAY_VIEWS, TUESDAY_VIEWS, WEDNESDAY_VIEWS, THURSDAY_VIEWS, FRIDAY_VIEWS, SATURDAY_VIEWS, SUNDAY_VIEWS)
     var sum = 0
     viewsOnWeek.forEach { sum += it }
     println("Просмотров за неделю было: $sum")
