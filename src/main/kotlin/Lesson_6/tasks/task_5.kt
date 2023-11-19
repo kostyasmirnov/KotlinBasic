@@ -1,7 +1,6 @@
 package Lesson_6.tasks
 
 
-
 fun main() {
 
     println(STARTER_MESSAGE)
@@ -12,7 +11,7 @@ fun main() {
         var number2 = (1..9).random()
         println("$number1 + $number2")
         val userAnswer = readln().toInt()
-        if (userAnswer == number1+number2) println(ACCESS_TRUE)
+        if (userAnswer == number1 + number2) return println(ACCESS_TRUE)
         else if (counter > 1) println(TRY_AGAIN)
         counter--
     } while (counter > 0)
