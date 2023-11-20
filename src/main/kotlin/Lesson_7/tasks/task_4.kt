@@ -9,7 +9,8 @@ fun main() {
         Thread.sleep(1000)
         println(i)
     }
-
+    println(TIME_END)
 }
 
 const val WELCOME_MESSAGE_FOR_TASK4 = "Сколько секунд нужно засечь?"
+const val TIME_END = "Время вышло"
