@@ -3,10 +3,11 @@ package Lesson_7.tasks
 fun main() {
 
     println(LENGTH_PASSWORD_FROM_USER)
-    val passwordLength = readln().toInt()
+    var passwordLength = readln().toInt()
+    if (passwordLength < 6) passwordLength = 6
     var password: String = ""
     var charset = ('a'..'z') + ('A'..'Z') + ('0'..'9')
-    for (i in 6..passwordLength) {
+    for (i in 1..passwordLength) {
         password += charset.random()
     }
     println("Сгенерированный пароль: $password")
