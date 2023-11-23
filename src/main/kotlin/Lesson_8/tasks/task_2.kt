@@ -16,4 +16,4 @@ fun main() {
 
 }
 
-const val SEARCH_INGREDIENT_MESSAGE = "Какой ингридиент вы хотели бы найти?"
+const val SEARCH_INGREDIENT_MESSAGE2 = "Какой ингридиент вы хотели бы найти?"
