@@ -13,7 +13,7 @@ fun main() {
         println("Готово! Вы сохранили следующий список: ")
         ingredients.forEach { println(it) }
     } else {
-        println("Такого ингридиента у нас нет \"$requestToChangeIngredient\" ")
+        println("Такого ингредиента у нас нет \"$requestToChangeIngredient\" ")
     }
 
 }
