@@ -6,6 +6,9 @@ fun main() {
     println("Введите количество порций: ")
     val numberOfServings = readln().toInt()
     val newIngredientsList = ingredientsList.map { it * numberOfServings}
-    println("На $numberOfServings порций вам понадобится: \nяиц - ${newIngredientsList[0]} шт, молока - ${newIngredientsList[1]} мл, сливочного масла - ${newIngredientsList[2]} гр")
+    println("""На $numberOfServings порций вам понадобится: 
+        |яиц - ${newIngredientsList[0]} шт, 
+        |молока - ${newIngredientsList[1]} мл, 
+        |сливочного масла - ${newIngredientsList[2]} гр""".trimMargin())
 
 }
