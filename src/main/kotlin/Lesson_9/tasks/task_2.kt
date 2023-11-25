@@ -7,12 +7,15 @@ fun main() {
     val ingredientsList = mutableListOf("помидор", "картошка", "укроп")
     println(INGREDIENTS_LIST)
     ingredientsList.forEach { println(it) }
+
     println(IS_ADD_NEW)
     val isNeedAddNewIngredient = readln().toString()
-    if (isNeedAddNewIngredient == "да") println(NEW_INGREDIENT)
-        else exitProcess(0)
+    if (isNeedAddNewIngredient.equals("да", ignoreCase = true)) println(NEW_INGREDIENT)
+        else return
+
     val newIngredient = readln().toString()
     ingredientsList.add(newIngredient)
+
     println(NEW_INGREDIENTS_LIST)
     ingredientsList.forEach { println(it) }
 }
