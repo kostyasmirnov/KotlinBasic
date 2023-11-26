@@ -1,6 +1,5 @@
 package Lesson_9.tasks
 
-import kotlin.system.exitProcess
 
 fun main() {
 
@@ -11,7 +10,7 @@ fun main() {
     println(IS_ADD_NEW)
     val isNeedAddNewIngredient = readln().toString()
     if (isNeedAddNewIngredient.equals("да", ignoreCase = true)) println(NEW_INGREDIENT)
-        else return
+    else return
 
     val newIngredient = readln().toString()
     ingredientsList.add(newIngredient)
