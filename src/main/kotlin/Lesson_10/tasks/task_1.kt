@@ -12,9 +12,10 @@ fun main() {
 
 }
 
+fun rollDice(): Int {
+    val rangeNumbers = (1..6)
+    return rangeNumbers.random()
+}
+
 const val COMPUTER_ROLL = "Компьютер бросил кости, результат: "
 const val HUMAN_ROLL = "Вы бросили кости, результат: "
-fun rollDice(): Int {
-    val randomNumber = (1..6)
-    return randomNumber.random()
-}
