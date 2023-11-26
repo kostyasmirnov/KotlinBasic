@@ -36,19 +36,19 @@ class user2(
         println("Информация о пользователе №$id\n$login\n$password\n$email\n$bio")
     }
 
-    fun addBio(){
+    fun addBio() {
         bio = readln()
     }
 
     fun changePassword() {
         println("Введиет старый пароль: ")
         val currentPassword = readln().toString()!!
-            if (password == currentPassword) {
-                println("Введите новый пароль")
-                password = readln().toString()
-                println("Пароль изменен")
-            } else {
-                println("Введен неверный пароль. Попробуйте еще раз: ")
-            }
+        if (password == currentPassword) {
+            println("Введите новый пароль")
+            password = readln().toString()
+            println("Пароль изменен")
+        } else {
+            println("Введен неверный пароль. Попробуйте еще раз: ")
+        }
     }
 }
