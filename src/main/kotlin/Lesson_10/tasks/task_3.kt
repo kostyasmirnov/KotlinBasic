@@ -3,6 +3,7 @@ package Lesson_10.tasks
 
 fun main() {
 
+    println("Введите длину пароля: ")
     val passwordLengthFromUser = readln().toInt()!!
     println("Сгенерированный пароль: ${generatePassword(passwordLengthFromUser)}")
 
@@ -10,13 +11,14 @@ fun main() {
 
 fun generatePassword(length: Int): String {
     var password = ""
+    val specialChars = ('!'..'/')
+    val numbers = ('0'..'9')
+
     for (i in 0 until length) {
-        val specialChars = "!\"#\$%&'()*+,-./ ".random()
-        val numbers = ('0'..'9').random()
         password += if (password.length < length && i % 2 == 0) {
-            specialChars
+            specialChars.random()
         } else {
-            numbers
+            numbers.random()
         }
     }
     return password
