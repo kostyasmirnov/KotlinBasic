@@ -8,8 +8,8 @@ fun main() {
     println(WELCOME_MESSAGE_FOR_10_1)
 
     while (!isAuthCompleted) {
-        val userName = readln().toString()!!
-        val password = readln().toString()!!
+        val userName = readln().toString()
+        val password = readln().toString()
 
         val token = authorization(userName, password)
 
