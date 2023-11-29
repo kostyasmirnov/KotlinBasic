@@ -15,7 +15,7 @@ fun generatePassword(length: Int): String {
     val numbers = ('0'..'9')
 
     for (i in 0 until length) {
-        password += if (password.length < length && i % 2 == 0) {
+        password += if (i % 2 == 0) {
             specialChars.random()
         } else {
             numbers.random()
