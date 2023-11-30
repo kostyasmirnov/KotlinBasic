@@ -2,7 +2,7 @@ package Lesson_11.task_2
 
 fun main() {
 
-    var userTestik = user2(
+    var userTestik = User2(
         id = 1,
         login = "testik",
         password = "qwerty123",
@@ -17,13 +17,16 @@ fun main() {
     userTestik.changePassword()
 
     userTestik.printInfoAboutUser(
-        id = userTestik.id, login = userTestik.login,
-        password = userTestik.password, email = userTestik.email, bio = userTestik.bio
-    )
+        id = userTestik.id,
+        login = userTestik.login,
+        password = userTestik.password,
+        email = userTestik.email,
+        bio = userTestik.bio,
+        )
 
 }
 
-class user2(
+class User2(
     val id: Int,
     val login: String,
     var password: String,
@@ -41,11 +44,11 @@ class user2(
     }
 
     fun changePassword() {
-        println("Введиет старый пароль: ")
-        val currentPassword = readln().toString()!!
+        println("Введите старый пароль: ")
+        val currentPassword = readln()
         if (password == currentPassword) {
             println("Введите новый пароль")
-            password = readln().toString()
+            password = readln()
             println("Пароль изменен")
         } else {
             println("Введен неверный пароль. Попробуйте еще раз: ")
