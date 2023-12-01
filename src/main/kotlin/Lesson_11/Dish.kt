@@ -1,6 +1,6 @@
 package Lesson_11
 
-class Dish (
+class Dish(
     val id: Int,
     val name: String,
     var category: String,
