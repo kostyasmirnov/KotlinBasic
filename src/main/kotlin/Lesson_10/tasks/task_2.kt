@@ -6,18 +6,15 @@ fun main() {
     val loginUser = readln().toString()
     println(INPUT_PASSWORD)
     val passwordUser = readln().toString()
-    isValidateCreeds(loginUser, passwordUser)
-
-}
-
-fun isValidateCreeds(loginUser: String, passwordUser: String): Boolean {
-    val result = if (loginUser.length < MAX_LENGTH_FOP_CREEDS || passwordUser.length < MAX_LENGTH_FOP_CREEDS) {
+    if (validateCreeds(loginUser, passwordUser)) {
         println(INCORRECT_CREEDS)
-        return false
-    } else return true
+    }
 
-    return result
 }
+
+fun validateCreeds(loginUser: String, passwordUser: String): Boolean =
+    MAX_LENGTH_FOP_CREEDS > loginUser.length || MAX_LENGTH_FOP_CREEDS > passwordUser.length
+
 
 const val INPUT_LOGIN = "Введите логин: "
 const val INPUT_PASSWORD = "Введите пароль: "
