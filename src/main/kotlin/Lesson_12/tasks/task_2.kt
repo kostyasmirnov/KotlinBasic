@@ -11,7 +11,7 @@ fun main() {
 
 }
 
-class Weather2 (
+class Weather2(
     var temperatureDayTime: Int = 20,
     var temperatureNight: Int = 10,
     var wasPrecipitation: Boolean = false,
