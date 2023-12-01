@@ -7,7 +7,6 @@ fun main() {
         login = "testik",
         password = "qwerty123",
         email = "testikWork@gmail.com",
-        bio = "empty",
     )
 
     println("Расскажите о себе: ")
@@ -22,7 +21,7 @@ fun main() {
         password = userTestik.password,
         email = userTestik.email,
         bio = userTestik.bio,
-        )
+    )
 
 }
 
@@ -31,7 +30,7 @@ class User2(
     val login: String,
     var password: String,
     val email: String,
-    var bio: String,
+    var bio: String = "Empty bio",
 ) {
 
 
