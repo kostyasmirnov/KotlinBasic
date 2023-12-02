@@ -1,7 +1,5 @@
 package Lesson_11.tasks
 
-import Lesson_10.getName
-
 
 fun main() {
 
@@ -23,7 +21,6 @@ fun main() {
     println()
     classicHamburger.getIngredients()
     classicHamburger.countIngredients()
-
 
 
 }
@@ -76,8 +73,7 @@ open class Ingredients(
     fun countIngredients() {
         println(COUNT_SLIDER_MESSAGE)
         val countSlider = readln().toInt()
-        val updatedList = ingredients.map {
-            ingredients ->
+        val updatedList = ingredients.map { ingredients ->
             val parts = ingredients.split(" ")
             val name = parts.dropLast(1).joinToString(" ")
             val quantity = parts.last().toInt() * countSlider
