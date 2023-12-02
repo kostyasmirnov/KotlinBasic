@@ -11,7 +11,6 @@ fun main() {
         1, "Классический гамбургер", name = "Бургеры.png", "классический_гамбургер.пнг"
     )
 
-
     CategoryOfBurger.getAvatar()
     CategoryOfBurger.getDescription()
     CategoryOfBurger.openCategories(CategoryOfBurger.name)
@@ -21,7 +20,6 @@ fun main() {
     println()
     classicHamburger.getIngredients()
     classicHamburger.countIngredients()
-
 
 }
 
