@@ -7,14 +7,15 @@ fun main() {
     var continueGame = true
 
     while (continueGame) {
-        val rollByHuman = rollDice()
         val rollByComputer = rollDice()
+        val rollByHuman = rollDice()
 
-        newRound(rollByHuman, rollByComputer)
 
-        var result = checkGameResults(rollByHuman, rollByComputer)
+        newRound(rollByComputer, rollByHuman)
 
-        if (result == 1) humanWinsCount++
+        var result = isHumanWin(rollByComputer = rollByComputer, rollByHuman = rollByHuman)
+
+        if (result) humanWinsCount++
 
         continueGame = continueGame()
     }
@@ -37,13 +38,13 @@ fun newRound(rollByComputer: Int, rollByHuman: Int) {
     println("$COMPUTER_ROLL $rollByComputer\n$HUMAN_ROLL $rollByHuman")
 }
 
-fun checkGameResults(rollByComputer: Int, rollByHuman: Int): Int {
-    return if (rollByHuman > rollByComputer) {
+fun isHumanWin(rollByComputer: Int, rollByHuman: Int): Boolean {
+    return if (rollByComputer < rollByHuman) {
         println("Победил человек с результатом $rollByHuman")
-        1
+        true
     } else {
         println("Победил компютер с результатом $rollByComputer")
-        0
+        false
     }
 }
 
