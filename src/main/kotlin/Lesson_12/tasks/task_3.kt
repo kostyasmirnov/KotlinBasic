@@ -17,6 +17,12 @@ class Weather3(
     private var wasPrecipitation: Boolean = false,
 ) {
 
+    init {
+        this.temperatureDayTime = 15
+        this.temperatureNight = 8
+        this.wasPrecipitation = false
+    }
+
     fun printWeather3() {
         println(temperatureDayTime)
         println(temperatureNight)
