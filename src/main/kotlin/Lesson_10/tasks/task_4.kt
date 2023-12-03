@@ -10,10 +10,9 @@ fun main() {
         val rollByComputer = rollDice()
         val rollByHuman = rollDice()
 
-
         newRound(rollByComputer, rollByHuman)
 
-        var result = isHumanWin(rollByComputer = rollByComputer, rollByHuman = rollByHuman)
+        val result = isHumanWin(rollByComputer = rollByComputer, rollByHuman = rollByHuman)
 
         if (result) humanWinsCount++
 
@@ -26,8 +25,7 @@ fun main() {
 
 fun continueGame(): Boolean {
     println(PLAY_AGAIN)
-    val humanChoice = readln().lowercase().trim()
-    return humanChoice == "да"
+    return readln().trim().equals("да", ignoreCase = true)
 }
 
 fun rollDice(): Int {
