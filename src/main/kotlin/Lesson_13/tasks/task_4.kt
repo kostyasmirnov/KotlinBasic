@@ -9,14 +9,10 @@ fun main() {
 
     do {
         val contact = createContact()
-        if (contacts != null) {
-            if (contact != null) {
-                contacts.add(contact)
-            }
-        }
+        contacts.add(contact!!)
         println(IS_AGAIN)
         inputStop = readln().lowercase(Locale.getDefault())
-    } while (inputStop != "")
+    } while (inputStop.lowercase(Locale.getDefault()) != "стоп")
 
     contacts.forEach { println(it.printDirectory()) }
 
@@ -47,4 +43,4 @@ fun createContact(): PhoneDirectory4? {
 }
 
 const val NULL_PHONE_MESSAGE = "Номер телефона не был введен"
-const val IS_AGAIN = "Для добавления еще одной записи, введите \"да\""
+const val IS_AGAIN = "Для добавления еще одной записи, введите \"да\"\nДля выхода введите \"стоп\" "
