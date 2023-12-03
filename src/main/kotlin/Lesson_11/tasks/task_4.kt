@@ -17,18 +17,18 @@ class Category(
     val id: Int = 1,
     private val description: String = "Рецепты всех популярных видов бургеров",
     val name: String = "Бургеры",
-    private val preview_image: String,
+    private val previewImage: String,
 )
 
 class Recipe(
     val id: Int = 1,
     val screenHeader: String = "Бургеры",
     val name: String = "",
-    private val preview_image: String = "",
+    private val previewImage: String = "",
     val ingredients: List<String> = mutableListOf("булка 2", "сыр 4", "помидор 50", "котлета гриль 300")
 )
 
-open class Ingredient(
+class Ingredient(
     private val ingredients: List<String>,
     val isFavorites: Boolean = false,
     private val count: Int = 1,
