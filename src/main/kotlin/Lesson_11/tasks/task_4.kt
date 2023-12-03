@@ -7,7 +7,7 @@ fun main() {
         1, "Рецепты всех популярных видов бургеров",
         "Бургеры", "бургеры.png"
     )
-    val classicHamburger = Recipes(
+    val classicHamburger = Recipe(
         1, "Классический гамбургер", name = "Бургеры.png", "классический_гамбургер.пнг"
     )
 
@@ -20,7 +20,7 @@ class Category(
     private val preview_image: String,
 )
 
-class Recipes(
+class Recipe(
     val id: Int = 1,
     val screenHeader: String = "Бургеры",
     val name: String = "",
@@ -28,7 +28,7 @@ class Recipes(
     val ingredients: List<String> = mutableListOf("булка 2", "сыр 4", "помидор 50", "котлета гриль 300")
 )
 
-open class Ingredients(
+open class Ingredient(
     private val ingredients: List<String>,
     val isFavorites: Boolean = false,
     private val count: Int = 1,
