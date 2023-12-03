@@ -14,7 +14,6 @@ class PhoneDirectory2(
 ) {
 
     fun printDirectory(): String {
-        if (company == null) company = "<не указано>"
-        return ("- Имя: $name\n- Номер: $numberPhone\n- Компания: $company")
+        return ("- Имя: $name\n- Номер: $numberPhone\n- Компания: ${company ?: "[не указано]"}")
     }
 }
