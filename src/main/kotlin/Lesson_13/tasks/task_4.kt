@@ -4,19 +4,21 @@ import java.util.*
 
 fun main() {
 
-    val contacts: MutableList<PhoneDirectory4?> = mutableListOf()
+    val contacts: MutableList<PhoneDirectory4> = mutableListOf()
     var inputStop: String = ""
 
     do {
         val contact = createContact()
         if (contacts != null) {
-            contacts.add(contact)
+            if (contact != null) {
+                contacts.add(contact)
+            }
         }
         println(IS_AGAIN)
         inputStop = readln().lowercase(Locale.getDefault())
     } while (inputStop != "")
 
-    contacts.forEach { println(it?.printDirectory()) }
+    contacts.forEach { println(it.printDirectory()) }
 
 }
 
@@ -35,11 +37,11 @@ fun createContact(): PhoneDirectory4? {
     val inputName = readln()
 
     println("Введите номер телефона: ")
-    var numberPhone = readln().toLongOrNull()
+    var numberPhone = readln().toLongOrNull() ?: return null
     if (numberPhone == null) println(NULL_PHONE_MESSAGE)
 
     println("Введите название компании: \nнажмите \"Enter\" если желаете пропустить шаг")
-    var company = readlnOrNull()
+    var company = readln().takeIf { it.isNotEmpty() }
 
     return PhoneDirectory4(inputName, numberPhone, company)
 }
