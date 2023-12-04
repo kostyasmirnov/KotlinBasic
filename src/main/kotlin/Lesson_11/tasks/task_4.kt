@@ -7,8 +7,12 @@ fun main() {
         1, "Рецепты всех популярных видов бургеров",
         "Бургеры", "бургеры.png"
     )
+    val ingredients = Ingredient(
+        mutableListOf("булка 2", "сыр 4", "помидор 50", "котлета гриль 300"),
+        true, 3, "ФотоБургера.png"
+    )
     val classicHamburger = Recipe(
-        1, "Классический гамбургер", name = "Бургеры.png", "классический_гамбургер.пнг"
+        1, "Классический гамбургер", "Бургеры", "Бургер.png", ingredients
     )
 
 }
@@ -25,13 +29,14 @@ class Recipe(
     val screenHeader: String = "Бургеры",
     val name: String = "",
     private val previewImage: String = "",
-    val ingredients: List<String> = mutableListOf("булка 2", "сыр 4", "помидор 50", "котлета гриль 300")
+    val ingredients: Ingredient,
 )
 
 class Ingredient(
-    private val ingredients: List<String>,
+    private val ingredients: List<String> = mutableListOf("булка 2", "сыр 4", "помидор 50", "котлета гриль 300"),
     val isFavorites: Boolean = false,
     private val count: Int = 1,
+    val screenHeader: String,
 ) {
 
     fun getIngredients() {
