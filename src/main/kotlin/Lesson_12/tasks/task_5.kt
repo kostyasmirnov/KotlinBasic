@@ -10,8 +10,9 @@ fun main() {
     val wasPrecipitationCount: MutableList<Int> = mutableListOf()
 
     for (i in (1..COUNT_DAYS)) {
-        listOfDayWeather += Weather5((0..40).random(), (-10..15).random(),
-        Random.nextBoolean())
+        listOfDayWeather += Weather5(
+            (0..40).random(), (-10..15).random(), Random.nextBoolean()
+        )
     }
 
     listOfDayWeather.forEach {
@@ -29,7 +30,7 @@ fun main() {
 
 class Weather5(
     var temperatureDayTime: Int = 15,
-    var temperatureNight: Int= 8,
+    var temperatureNight: Int = 8,
     var wasPrecipitation: Boolean = false,
 )
 
