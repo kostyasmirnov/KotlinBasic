@@ -2,7 +2,7 @@ package Lesson_12.tasks
 
 fun main() {
 
-    val weather1 = Weather2()
+    val weather1 = Weather2(30, 10, false)
     val weather2 = Weather2(10, 3, true)
 
     weather1.printWeather()
@@ -12,9 +12,9 @@ fun main() {
 }
 
 class Weather2(
-    var temperatureDayTime: Int = 20,
-    var temperatureNight: Int = 10,
-    var wasPrecipitation: Boolean = false,
+    var temperatureDayTime: Int,
+    var temperatureNight: Int,
+    var wasPrecipitation: Boolean,
 ) {
 
 
