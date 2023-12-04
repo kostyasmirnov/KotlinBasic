@@ -1,6 +1,5 @@
 package Lesson_13.tasks
 
-import java.util.*
 
 fun main() {
 
@@ -12,14 +11,4 @@ fun main() {
         println(e)
     }
 
-}
-
-class PhoneDirectory5(
-    private val name: String?,
-    private val numberPhone: Long?,
-    private var company: String?,
-) {
-    fun printDirectory(): String {
-        return ("- Имя: $name\n- Номер: $numberPhone\n- Компания: $company\n")
-    }
 }
