@@ -2,29 +2,19 @@ package Lesson_12.tasks
 
 fun main() {
 
-    val weather1 = Weather3(30, 20)
-    val weather2 = Weather3(10, 3, true)
-
+    val weather1 = Weather3()
     weather1.printWeather3()
-    println()
-    weather2.printWeather3()
 
 }
 
-class Weather3(
-    private var temperatureDayTime: Int,
-    private var temperatureNight: Int,
-    private var wasPrecipitation: Boolean = false,
-) {
+class Weather3 {
 
-    init {
-        this.temperatureDayTime = 15
-        this.temperatureNight = 8
-        this.wasPrecipitation = false
-    }
+    val temperatureDayTime: Int = 30
+    val temperatureNight: Int = 20
+    val wasPrecipitation: Boolean = true
 
     fun printWeather3() {
-        println(temperatureDayTime)
+        println(temperatureDayTime + 273.15)
         println(temperatureNight)
         println(wasPrecipitation)
     }
