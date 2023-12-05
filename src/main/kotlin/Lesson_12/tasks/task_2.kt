@@ -12,9 +12,9 @@ fun main() {
 }
 
 class Weather2(
-    var temperatureDayTime: Int,
-    var temperatureNight: Int,
-    var wasPrecipitation: Boolean,
+    val temperatureDayTime: Int,
+    val temperatureNight: Int,
+    val wasPrecipitation: Boolean,
 ) {
 
 
