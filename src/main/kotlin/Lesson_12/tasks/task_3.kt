@@ -9,13 +9,18 @@ fun main() {
 
 class Weather3 {
 
-    val temperatureDayTime: Int = 30
-    val temperatureNight: Int = 20
+    val kelvinDayTemperature: Int = 303
+    val kelvinTemperatureNight: Int = 293
     val wasPrecipitation: Boolean = true
 
+    val degreeDayTemperature: Int = kelvinDayTemperature - degreeCelsius
+    val degreeTemperatureNight: Int = kelvinTemperatureNight - degreeCelsius
+
     fun printWeather3() {
-        println(temperatureDayTime + 273.15)
-        println(temperatureNight)
+        println(degreeDayTemperature)
+        println(degreeTemperatureNight)
         println(wasPrecipitation)
     }
 }
+
+const val degreeCelsius: Int = 273.15.toInt()
