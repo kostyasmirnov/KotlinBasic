@@ -8,13 +8,14 @@ fun main() {
 }
 
 class Weather3(
-    val kelvinDayTemperature: Int,
-    val kelvinTemperatureNight: Int,
-    val wasPrecipitation: Boolean,
+    kelvinDayTemperature: Int,
+    kelvinTemperatureNight: Int,
+    wasPrecipitation: Boolean,
 ) {
 
-    val dayTemperature: Int = (kelvinDayTemperature - degreeCelsius).toInt()
-    val nightTemperature: Int = (kelvinTemperatureNight - degreeCelsius).toInt()
+    val dayTemperature: Int = (kelvinDayTemperature - DEGREE_CELSIUS).toInt()
+    val nightTemperature: Int = (kelvinTemperatureNight - DEGREE_CELSIUS).toInt()
+    val wasPrecipitation: Boolean = wasPrecipitation
 
     fun printWeather3() {
         println(dayTemperature)
@@ -23,4 +24,4 @@ class Weather3(
     }
 }
 
-const val degreeCelsius: Double = 273.15
+const val DEGREE_CELSIUS: Double = 273.15
