@@ -7,14 +7,9 @@ fun main() {
     val iceBreakerShip1 = IceBreakerShip2()
     val cargoShip1 = CargoShip2()
 
-    linerShip1.printInfo()
-    linerShip1.loadingLiner()
-
-    iceBreakerShip1.printInfo()
-    iceBreakerShip1.loadingIceBreaker()
-
-    cargoShip1.printInfo()
-    cargoShip1.loagdingCargo()
+    val list: List<LinerShip2> = mutableListOf(linerShip1, iceBreakerShip1, cargoShip1)
+    list.forEach { it.loadingLiner() }
+    list.forEach { it.printInfo() }
 
 }
 
@@ -24,7 +19,7 @@ open class LinerShip2(
     val numberOfPassengers: Int = 200,
 ) {
 
-    fun loadingLiner() {
+    open fun loadingLiner() {
         println("Корабль $name: выдвигает горизонтальный трап со шкафута")
     }
 
@@ -46,7 +41,7 @@ class IceBreakerShip2(
     numberOfPassengers = numerOfPassengers,
 ) {
 
-    fun loadingIceBreaker() {
+    override fun loadingLiner() {
         println("Корабль $name: открывает ворота со стороны кормы")
     }
 
@@ -68,7 +63,7 @@ class CargoShip2(
     numberOfPassengers = numerOfPassengers,
 ) {
 
-    fun loagdingCargo() {
+    override fun loadingLiner() {
         println("Корабль $name: активирует погрузочный кран")
     }
 
