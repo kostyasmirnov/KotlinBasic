@@ -26,11 +26,14 @@ class WeatherServer {
     fun sendWeatherData(data: WeatherStationStats) {
         when (data) {
             is Temperature -> {
-                println(SEND_MESSAGE + "температуре: ${data.valueTemperatue}°C")
+                println("$SEND_MESSAGE температуре: ${data.valueTemperatue}°C")
             }
 
             is PrecipitationAmount -> {
-                println(SEND_MESSAGE + "вероятности осадков: ${data.valuePrecipitation} mm")
+                println("$SEND_MESSAGE вероятности осадков: ${data.valuePrecipitation} mm")
+            }
+            else -> {
+                println("Пришли данные которые не относятся ни к температуре, ни к осадкам")
             }
         }
     }
