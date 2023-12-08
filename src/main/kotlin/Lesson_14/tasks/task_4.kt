@@ -3,15 +3,12 @@ package Lesson_14.tasks
 
 fun main() {
 
-    val phobos: Satellite = Satellite("Фобос", false, true)
-    val deimos: Satellite = Satellite("Деймос", false, false)
-    val marsPlanet: Planet = Planet("Марс", true, true)
-
-    marsPlanet.satellites.add(phobos)
-    marsPlanet.satellites.add(deimos)
+    val phobos: Satellite = Satellite("Фобос", isAtmosphere = false, isCanBeDisembarkation = true)
+    val deimos: Satellite = Satellite("Деймос", isAtmosphere = false, isCanBeDisembarkation = false)
+    val marsPlanet: Planet = Planet("Марс", isAtmosphere = true, isCanBeDisembarkation = true, satellite = mutableListOf(phobos, deimos))
 
     println("У планеты: ${marsPlanet.name} есть спутники:")
-    for (satellites in marsPlanet.satellites) {
+    for (satellites in marsPlanet.satellite) {
         println("-${satellites.name}")
     }
 
@@ -27,11 +24,8 @@ class Planet(
     name: String,
     isAtmosphere: Boolean,
     isCanBeDisembarkation: Boolean,
-) : CelestialBody(name, isAtmosphere, isCanBeDisembarkation) {
-
-    val satellites = mutableListOf<Satellite>()
-
-}
+    val satellite: List<Satellite> = mutableListOf()
+) : CelestialBody(name, isAtmosphere, isCanBeDisembarkation)
 
 class Satellite(
     name: String,
