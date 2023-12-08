@@ -7,15 +7,18 @@ fun main() {
     var sumWhiteFigures: Int
     var sumBlackFigures: Int
 
-    val rectangle1: Int = Rectangle(10, 12, BLACK_COLOR).calculateArea()
-    val rectangle2: Int = Rectangle(20, 10, WHITE_COLOR).calculateArea()
-    val rectangle3: Int = Rectangle(30, 30, BLACK_COLOR).calculateArea()
-    val circle1: Int = Circle(10, WHITE_COLOR).calculatePerimeter()
-    val circle2: Int = Circle(20, BLACK_COLOR).calculatePerimeter()
-    val circle3: Int = Circle(30, WHITE_COLOR).calculatePerimeter()
+    val figures = listOf(
+        Rectangle(10, 12, BLACK_COLOR),
+        Rectangle(20, 10, WHITE_COLOR),
+        Rectangle(30, 30, BLACK_COLOR),
+        Circle(10, WHITE_COLOR),
+        Circle(20, BLACK_COLOR),
+        Circle(30, WHITE_COLOR),
+    )
 
-    sumWhiteFigures = rectangle2 + circle1 + circle3
-    sumBlackFigures = rectangle1 + rectangle3 + circle2
+    sumWhiteFigures = figures.filter { it.color == WHITE_COLOR }.sumBy { it.calculateArea() }
+    sumBlackFigures = figures.filter { it.color == BLACK_COLOR }.sumBy { it.calculatePerimeter() }
+
     println("-Сумма периметров всех черных фигур = $sumBlackFigures\n-Сумма площадей всех белых фигур = $sumWhiteFigures")
 
 }
