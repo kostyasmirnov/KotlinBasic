@@ -18,14 +18,15 @@ abstract class Shop(
     val name: String,
     val id: Int,
     val countUnitsOnWarehouse: Int,
+    val price: Int,
 )
 
 class MusicalInstruments(
     name: String,
     id: Int,
     countUnitsOnWarehouse: Int,
-    val price: Int,
-) : Shop(name, id, countUnitsOnWarehouse), SearchMusicalInstruments {
+    price: Int,
+) : Shop(name, id, countUnitsOnWarehouse, price), SearchMusicalInstruments {
 
     override fun searchMusicalInstruments() {
         super.searchMusicalInstruments()
@@ -38,8 +39,8 @@ class ComponentsInstruments(
     name: String,
     id: Int,
     countUnitsOnWarehouse: Int,
-    val price: Int,
-) : Shop(name, id, countUnitsOnWarehouse)
+    price: Int,
+) : Shop(name, id, countUnitsOnWarehouse, price)
 
 interface SearchMusicalInstruments {
 
