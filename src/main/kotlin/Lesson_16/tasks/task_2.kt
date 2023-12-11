@@ -1,5 +1,7 @@
 package Lesson_16.tasks
 
+import kotlin.math.pow
+
 
 fun main() {
 
@@ -10,7 +12,7 @@ fun main() {
 }
 
 class Circle(
-    val radius: Double,
+    private val radius: Double,
 ) {
 
     fun calculateLength() {
@@ -18,7 +20,7 @@ class Circle(
     }
 
     fun calculateArea() {
-        println(PI * (radius * radius))
+        println(PI * (radius.pow(2.0)))
     }
 }
 
