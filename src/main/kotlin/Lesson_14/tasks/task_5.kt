@@ -1,5 +1,7 @@
 package Lesson_14.tasks
 
+import kotlin.concurrent.thread
+
 
 fun main() {
 
@@ -45,12 +47,14 @@ class Chat {
         val groupedMessages = messages.groupBy {
             if (it is ChildMessage) it.parentMessageId else it.id
         }
-        for (message in groupedMessages.keys.sorted()) {
-            val indent = if (groupedMessages[message]!!.first() is ChildMessage) "\t" else ""
-            for (msg in groupedMessages[message]!!) {
-                println("$indent${msg.author}: ${msg.text}")
+        groupedMessages.forEach { (_, groupedMessages) ->
+            groupedMessages.forEach { message ->
+                val indent = if (message is ChildMessage) "\t" else ""
+                println("$indent${message.author}: ${message.text}")
             }
         }
+
     }
 
 }
+
