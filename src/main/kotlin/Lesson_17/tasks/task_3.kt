@@ -2,25 +2,25 @@ package Lesson_17.tasks
 
 fun main() {
 
-    val folder1 = Folder(true)
-    val folder2 = Folder(false)
-    println("${folder1.name}, ${folder1.countOfFiles}")
-    println("${folder2.name}, ${folder2.countOfFiles}")
+    val folder1 = Folder("Работа", 5, true)
+    val folder2 = Folder("Учеба", 12, false)
+    println("${folder1.displayName}, ${folder1.displayFileCount}")
+    println("${folder2.displayName}, ${folder2.displayFileCount}")
 }
 
 class Folder(
+    val name: String,
+    val countOfFiles: Int,
     val isSecret: Boolean,
 ) {
 
-    var name: String = "Работа"
-        get() {
-            if (isSecret) return "скрытая папка"
-            else return field
-        }
-    var countOfFiles: Int = 10
-        get() {
-            if (isSecret) return 0
-            else return field
-        }
+    val displayName: String
+        get() = if (isSecret) "скрытая папка"
+        else name
+
+
+    val displayFileCount: Int
+        get() = if (isSecret) 0
+        else countOfFiles
 
 }
