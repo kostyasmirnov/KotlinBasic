@@ -3,7 +3,6 @@ package Lesson_17.tasks
 fun main() {
 
     val user1 = User("testik19", "1231")
-    user1.passwordUser
     user1.passwordUser = "privetKakDela"
     user1.loginUser = "19testik"
 }
