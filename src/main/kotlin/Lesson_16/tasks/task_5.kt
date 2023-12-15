@@ -27,12 +27,11 @@ class Player(
 
     fun takeDamage(damage: Int) {
         if (!isDead) {
-            this.health -= damage
+            health -= damage
         }
         if (health <= 0) {
-            this.health = 0
             isDead = true
-            death(health, damage)
+            death()
         }
     }
 
@@ -43,7 +42,7 @@ class Player(
         }
     }
 
-    private fun death(health: Int, damage: Int) {
+    private fun death() {
         health == 0
         damage == 0
         println("$name Умер!")
