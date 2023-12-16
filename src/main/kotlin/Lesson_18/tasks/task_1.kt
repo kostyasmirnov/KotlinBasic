@@ -5,20 +5,20 @@ fun main() {
     val order1 = Order()
     val order2 = Order()
 
-    order1.infoAboutOrder(1, "Гречка")
-    order2.infoAboutOrder(1, listOf("Сметана", "Зелень"))
+    order1.printOrderInfo(1, "Гречка")
+    order2.printOrderInfo(1, listOf("Сметана", "Зелень"))
 }
 
 class Order {
 
-    fun infoAboutOrder(
+    fun printOrderInfo(
         number: Int,
         product: String,
     ) {
         println("Заказан товар: [$product]")
     }
 
-    fun infoAboutOrder(
+    fun printOrderInfo(
         number: Int,
         products: List<String>
     ) {
