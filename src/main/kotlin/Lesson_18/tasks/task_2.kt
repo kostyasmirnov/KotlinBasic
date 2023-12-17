@@ -4,42 +4,41 @@ import kotlin.random.Random
 
 fun main() {
 
-    val fourFaces = FourFaces(4)
-    val sixFaces = SixFaces(6)
-    val aitFaces = AitFaces(8)
+    val fourFaces = FourFaces()
+    val sixFaces = SixFaces()
+    val aitFaces = AitFaces()
 
     val listOfDice = arrayOf<NumberOfFaces>(fourFaces, sixFaces, aitFaces)
     listOfDice.forEach { println(it.rollDice()) }
 
 }
 
-open class NumberOfFaces {
-    open fun rollDice() = 0
-}
-
-class FourFaces(
-    private val fourFacesCount: Int,
-): NumberOfFaces() {
-    override fun rollDice(): Int {
-        val randomFace = 1..fourFacesCount
+abstract class NumberOfFaces(
+    val facesCount :Int,
+) {
+    open fun rollDice(): Int {
+        val randomFace = 1..facesCount
         return randomFace.random()
     }
 }
 
-class SixFaces(
-    private val sixFacesCount: Int,
-): NumberOfFaces() {
+class FourFaces: NumberOfFaces(4) {
     override fun rollDice(): Int {
-        val randomFace = 1..sixFacesCount
+        val randomFace = 1..facesCount
         return randomFace.random()
     }
 }
 
-class AitFaces(
-    private val aitFacesCount: Int,
-): NumberOfFaces() {
+class SixFaces: NumberOfFaces(6) {
     override fun rollDice(): Int {
-        val randomFace = 1..aitFacesCount
+        val randomFace = 1..facesCount
+        return randomFace.random()
+    }
+}
+
+class AitFaces: NumberOfFaces(8) {
+    override fun rollDice(): Int {
+        val randomFace = 1..facesCount
         return randomFace.random()
     }
 }
