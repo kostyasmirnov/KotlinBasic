@@ -28,10 +28,6 @@ class Fox(
     name: String,
 ) : Tamagotchi(name) {
 
-    override fun play(): String {
-        return super.play()
-    }
-
     override fun eat(): String = "$name - ест ягоды"
 
 }
@@ -39,10 +35,6 @@ class Fox(
 class Dog(
     name: String,
 ) : Tamagotchi(name) {
-
-    override fun sleep(): String {
-        return super.sleep()
-    }
 
     override fun eat(): String = "$name - ест косточки"
 
