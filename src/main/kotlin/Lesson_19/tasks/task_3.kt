@@ -6,7 +6,7 @@ fun main() {
     starkiller.perfromAction(Action.LANDING)
 }
 
-enum class Action{
+enum class Action {
     TAKE_OFF,
     LANDING,
     DEFEND,
