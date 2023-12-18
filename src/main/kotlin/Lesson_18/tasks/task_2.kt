@@ -14,7 +14,7 @@ fun main() {
 }
 
 abstract class NumberOfFaces(
-    val facesCount :Int,
+    val facesCount: Int,
 ) {
     open fun rollDice(): Int {
         val randomFace = 1..facesCount
@@ -22,23 +22,8 @@ abstract class NumberOfFaces(
     }
 }
 
-class FourFaces: NumberOfFaces(4) {
-    override fun rollDice(): Int {
-        val randomFace = 1..facesCount
-        return randomFace.random()
-    }
-}
+class FourFaces : NumberOfFaces(4)
 
-class SixFaces: NumberOfFaces(6) {
-    override fun rollDice(): Int {
-        val randomFace = 1..facesCount
-        return randomFace.random()
-    }
-}
+class SixFaces : NumberOfFaces(6)
 
-class AitFaces: NumberOfFaces(8) {
-    override fun rollDice(): Int {
-        val randomFace = 1..facesCount
-        return randomFace.random()
-    }
-}
+class AitFaces : NumberOfFaces(8)
