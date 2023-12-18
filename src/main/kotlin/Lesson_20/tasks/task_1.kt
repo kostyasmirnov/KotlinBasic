@@ -4,5 +4,7 @@ fun main() {
 
     val username = "Костя"
 
-    { it: String -> println("С наступающим Новым Годом, $username!") }(username)
+    val lambdaMessage: () -> Unit = { { it: String -> println("С наступающим Новым Годом, $username!") }(username) }
+    lambdaMessage.invoke()
+
 }
