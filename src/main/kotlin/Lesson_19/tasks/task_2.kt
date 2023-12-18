@@ -12,10 +12,10 @@ enum class ShopCategory {
     Other;
 
     open fun getNameCategory(category: ShopCategory): String {
-        return when (category) {
-            ShopCategory.CLOTH -> "Одежда"
-            ShopCategory.STATIONERY -> "Канцелярские товары"
-            ShopCategory.Other -> "Разное"
+        return when (this) {
+            CLOTH -> "Одежда"
+            STATIONERY -> "Канцелярские товары"
+            Other -> "Разное"
         }
     }
 
