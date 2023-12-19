@@ -17,13 +17,15 @@ enum class Ammunition(val damage: Int) {
     RED(20);
 }
 
-class Tank {
+class Tank(
+    val isGunLoaded: Boolean = false,
+) {
 
     private fun perfromAction(ammunition: Ammunition) {
         when (ammunition) {
-            Ammunition.BLUE -> println("Нанесено ${ammunition.damage} урона")
-            Ammunition.GREEN -> println("Нанесено ${ammunition.damage} урона")
-            Ammunition.RED -> println("Нанесено ${ammunition.damage} урона")
+            Ammunition.BLUE -> println("Нанесено ${ammunition.damage} урона боеприпасми ${ammunition.name}")
+            Ammunition.GREEN -> println("Нанесено ${ammunition.damage} урона боеприпасми ${ammunition.name}")
+            Ammunition.RED -> println("Нанесено ${ammunition.damage} урона боеприпасми ${ammunition.name}")
             else -> println("Заклинило орудие")
         }
     }
