@@ -23,7 +23,7 @@ class SpaceShip {
     }
 
     private fun takeoff() {
-        // TODO(здесь нужна информация о дополнительной логике!!)
+        //TODO: здесь нужна информация о дополнительной логике!!
     }
 
     private fun landing() {
@@ -31,7 +31,7 @@ class SpaceShip {
     }
 
     private fun defend() {
-        throw (NotImplementedError("Надо доработать"))
+        TODO("Надо доработать")
     }
 }
 
