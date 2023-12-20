@@ -4,8 +4,8 @@ fun main() {
 
     val player1 = Player("Viking", 50)
 
-    val healingPotion: (currentHealth: Int) -> Unit = { player1.currentHealth = player1.maxHealth }
-    healingPotion.invoke(player1.currentHealth)
+    val healingPotion: (player: Player) -> Unit = { player1.currentHealth = player1.maxHealth }
+    healingPotion(player1)
     println("Теперь здоровье ${player1.name} = ${player1.currentHealth}")
 }
 
