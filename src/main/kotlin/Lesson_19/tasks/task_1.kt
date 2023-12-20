@@ -3,7 +3,7 @@ package Lesson_19.tasks
 fun main() {
 
     println(MESSAGE_FISH)
-    for (i in Fish.values()) println(i.fish)
+    for (i in Fish.entries) println(i.fish)
 }
 
 enum class Fish(val fish: String) {
