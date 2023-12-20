@@ -4,14 +4,14 @@ fun main() {
 
     val player1 = Player("Костя", false)
 
-    val openDoor: () -> Unit = {
+    val openDoor: (player: Player) -> Unit = {
         if (player1.isHaveKey) println("${player1.name} открыл дверь")
         else println("Дверь заперта")
     }
 
-    openDoor.invoke()
+    openDoor(player1)
     player1.isHaveKey = true
-    openDoor.invoke()
+    openDoor(player1)
 
 }
 
