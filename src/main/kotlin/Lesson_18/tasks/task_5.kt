@@ -14,41 +14,40 @@ fun main() {
 }
 
 abstract class Figure {
-    abstract fun draw()
+    abstract fun draw(screen: Screen)
 }
 
-class Square(
-    private val top: Point,
-    private val lenghtSide: Number,
-) : Figure() {
-
-    override fun draw() {
-        println("Нарисован квадрт с координатой ${top.x}, ${top.y} и длиной $lenghtSide")
-    }
-
-}
-
-class Circle(
-    private val center: Point,
-    private val radius: Number,
-) : Figure() {
-
-    override fun draw() {
-        println("Нарисована окружность с центром ${center.x}, ${center.y} и радиусом $radius")
+class Square(val topLeft: Point, val sideLength: Number) : Figure() {
+    override fun draw(screen: Screen) {
+        screen.draw(this)
     }
 }
 
-class Point(
+class Circle(val center: Point, val radius: Number) : Figure() {
+    override fun draw(screen: Screen) {
+        screen.draw(this)
+    }
+}
+
+data class Point(
     val x: Number,
     val y: Number,
 ) : Figure() {
-    override fun draw() {
-        println("Нарисована точка по координатам $x, $y")
+    override fun draw(screen: Screen) {
+        screen.draw(this)
     }
 }
 
 class Screen {
-    fun draw(figure: Figure) {
-        figure.draw()
+    fun draw(point: Point) {
+        println("Нарисована точка с координатами: (${point.x}, ${point.y})")
+    }
+
+    fun draw(square: Square) {
+        println("Нарисована квадрат с координатами (${square.topLeft.x}, ${square.topLeft.y}) и длинной стороны ${square.sideLength}")
+    }
+
+    fun draw(circle: Circle) {
+        println("Нарисована окружность с координатами (${circle.center.x}, ${circle.center.y}) и радиусом ${circle.radius}")
     }
 }
