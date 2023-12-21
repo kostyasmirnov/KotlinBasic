@@ -14,6 +14,6 @@ fun File.writeToFile(word: String) {
 
     val content = readText()
     val newContent = word.lowercase() + content
-    FileWriter(this).use { it.write(newContent) }
+   writeText(newContent)
 
 }
